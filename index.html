@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Hello React!</title>
-    <script src="./react.min.js"></script>
-    <script src="./react-dom.min.js"></script>
-    <script src="./browser.min.js"></script>
-    <script src="./SnackBar.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1"/>
+    <title>A material design based snackbar</title>
+    <style>
+      html, body, #content {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      body {
+        font-family: Helvetica,Arial,sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .showBtn {
+        margin: 60px auto;
+        display: block;
+        width: 150px;
+        height: 35px;
+        border: 0;
+        background: #2196F3;
+        color: #fff;
+        font-size: 14px;
+        border-radius: 2px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.26);
+        cursor: pointer;
+      }
+
+      .showBtn:active {
+        box-shadow: none;
+      }
+    </style>
   </head>
   <body>
     <div id="content"></div>
-    <script type="text/babel" src="./demo.js"></script>
+    <script type="text/javascript" src="./bundle.js"></script>
   </body>
 </html>
