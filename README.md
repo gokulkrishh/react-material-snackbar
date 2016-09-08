@@ -8,7 +8,7 @@
 ### Installation
 
 ```sh
-npm install --save react-snackbar
+npm install --save react-material-snackbar
 ```
 
 #### Usage
