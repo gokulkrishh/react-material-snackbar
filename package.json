@@ -1,6 +1,6 @@
 {
   "name": "gokulkrishh",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A material design snack react component.",
   "keywords": [
     "react",
@@ -8,7 +8,9 @@
     "material design",
     "material",
     "snackbar",
-    "react component"
+    "react component",
+    "react snackbar",
+    "react material snackbar"
   ],
   "homepage": "http://github.com/gokulkrishh/react-snackbar",
   "bugs": {
@@ -21,7 +23,7 @@
     "url": "git+https://github.com/gokulkrishh/react-snackbar.git"
   },
   "scripts": {
-    "build": "NODE_ENV=production rm -rf public && mkdir public && browserify SnackBar.js | uglifyjs -cm > public/bundle.js"
+    "build": "NODE_ENV=production rm -rf dist && mkdir dist && browserify app.js | uglifyjs -cm > dist/bundle.js"
   },
   "browserify": {
     "transform": [
@@ -32,6 +34,7 @@
     "babelify": "^6.1.3",
     "browserify": "^10.2.6",
     "react": "~15.0.0",
+    "react-dom": "~15.0.0",
     "uglify-js": "^2.4.24",
     "watchify": "^3.2.3"
   },

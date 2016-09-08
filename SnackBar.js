@@ -1,9 +1,8 @@
-import { Component, PropTypes } from "react"
+import React, {PropTypes} from "react"
 
-export default class SnackBar extends Component {
+export default class SnackBar extends React.Component {
   static propTypes: {
     actionText: PropTypes.string,
-    actionHandler: PropTypes.func.isRequired,
     show: PropTypes.bool.isRequired,
     snackBarText: PropTypes.string.isRequired
   }
@@ -11,20 +10,41 @@ export default class SnackBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: false
+      showSnackBar: false
     };
+
+    this.hideSnackbar = this.hideSnackbar.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const {showSnackBar} = this.state;
+    if (showSnackBar !== nextProps.show) {
+      this.setState({
+        showSnackBar: nextProps.show
+      });
+
+      setTimeout(() => {
+	 			this.hideSnackbar();
+ 			}, 3000);
+    }
+  }
+
+  hideSnackbar() {
+    this.setState({
+      showSnackBar: false
+    });
   }
 
   render() {
-    const {actionText, actionHandler, show, snackBarText} = this.props;
+    const {actionText, show, snackBarText} = this.props;
+    const {showSnackBar} = this.state;
 
     var snackbarStyle = {
       position: "fixed",
-      bottom: "0px",
-      left: "0",
-      right: "0",
-      width: "290px",
-      maxWidth: "568px",
+      left: 0,
+      right: 0,
+      bottom: "-50px",
+      width: "100%",
       minHeight: "50px",
       background: "#323232",
       color: "#fff",
@@ -38,35 +58,41 @@ export default class SnackBar extends Component {
       WebkitBoxPack: "justify",
       msFlexPack: "justify",
       justifyContent: "space-between",
-      WebkitTransition: "bottom 0.30s cubic-bezier(0, 0, 0.30, 1)",
-      transition: "bottom 0.30s cubic-bezier(0, 0, 0.30, 1)",
+      WebkitTransition: "bottom 200ms cubic-bezier(0, 0, 0.30, 1)",
+      transition: "bottom 200ms cubic-bezier(0, 0, 0.30, 1)",
       fontWeight: "500",
-      textTransform: "capitalize",
-      borderRadius: "2px",
-      fontSize: "14px",
-      pointerEvents: "none"
-    };
-
-    var snackbarShowStyle = {
-      bottom: "0"
+      textTransform: "initial",
+      fontSize: "14px"
     };
 
     var snackbarTextStyle = {
-      margin: "8px 10px",
-      wordWreak: "break-all"
+      marginLeft: "15px",
+      wordBreak: "break-all",
+      flexGrow: 1
     };
 
     var snackbarActionStyle = {
       textTransform: "uppercase",
       color: "#ff4081",
       cursor: "pointer",
-      marginRight: "20px"
+      marginRight: "15px",
+      border: 0,
+      background: "transparent",
+      fontSize: "13px",
+      outline: 0
     };
 
-    return (
-      <div className={show ? snackbarStyle + snackbarShowStyle : snackbarStyle}>
-        <p className={snackbarTextStyle}>{snackBarText}</p>
-        <button className={snackbarActionStyle} onClick={actionHandler}>{actionText}</button>
+    if (showSnackBar) {
+      snackbarStyle.bottom = 0;
+    }
+    else {
+      snackbarStyle.bottom = "-50px"
+    }
+
+    return(
+      <div style={snackbarStyle}>
+        <p style={snackbarTextStyle}>{snackBarText}</p>
+        <button style={snackbarActionStyle} onClick={this.hideSnackbar}>{actionText}</button>
       </div>
     );
   }

@@ -20,12 +20,9 @@ npm install --save react-snackbar
 
   <SnackBar
     actionText=""                          //Default `close` - Optional
-    actionHandler={this.handleSnackbar}    //Function - Required
-    show=true                              //Boolean  - Required
+    show={true}                            //Boolean  - Required
     snackBarText="Application is offline!" //String   - Required
   />
 ```
 
-#### License
-
-##### MIT
+#### MIT License
