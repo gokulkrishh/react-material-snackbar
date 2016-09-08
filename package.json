@@ -23,7 +23,7 @@
     "url": "git+https://github.com/gokulkrishh/react-snackbar.git"
   },
   "author": "Gokulakrishnan Kalaikovan <krishnangokul9@gmail.com> (http://github.com/gokulkrishh)",
-  "main": "SnackBar.js",
+  "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production rm -rf dist && mkdir dist && browserify index.js | uglifyjs -cm > dist/bundle.js",
     "demo": "NODE_ENV=production browserify ./demo/demo.js | uglifyjs -cm > ./demo/bundle.js"
