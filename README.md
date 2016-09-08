@@ -17,7 +17,7 @@ npm install --save react-snackbar
   import SnackBar from 'SnackBar';
 
   <SnackBar
-    actionText="undo"                          //Default `close` - Optional
+    actionText="undo"                      //Default `close` - Optional
     show={true}                            //Boolean  - Required
     snackBarText="Application is offline!" //String   - Required
   />
