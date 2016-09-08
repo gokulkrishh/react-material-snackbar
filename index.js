@@ -101,3 +101,9 @@ export default class SnackBar extends React.Component {
 SnackBar.defaultProps = {
   actionText: "close"
 };
+
+SnackBar.propTypes: {
+  actionText: PropTypes.string,
+  show: PropTypes.bool.isRequired,
+  snackBarText: PropTypes.string.isRequired
+};

@@ -14,7 +14,7 @@ npm install --save react-material-snackbar
 #### Usage
 
 ```js
-  import SnackBar from 'SnackBar';
+  import SnackBar from 'react-material-snackbar';
 
   <SnackBar
     actionText="undo"                      //Default `close` - Optional
