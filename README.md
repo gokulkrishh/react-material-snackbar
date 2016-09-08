@@ -3,8 +3,6 @@
 
 *A material design snackbar react component.*
 
-# WIP
-
 ## [Demo](https://git.io/vi8fZ)
 
 ### Installation
