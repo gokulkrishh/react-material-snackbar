@@ -1,0 +1,53 @@
+{
+  "name": "gokulkrishh",
+  "version": "0.0.1",
+  "description": "A material design snack react component.",
+  "keywords": [
+    "react",
+    "reactjs",
+    "material design",
+    "material",
+    "snackbar",
+    "react component"
+  ],
+  "homepage": "http://github.com/gokulkrishh/react-snackbar",
+  "bugs": {
+    "url": "https://github.com/gokulkrishh/react-snackbar/issues"
+  },
+  "license": "MIT",
+  "author": "gokulkrishh",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gokulkrishh/react-snackbar.git"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/babel SnackBar.js --out-file ./dist/SnackBar.js"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react",
+      "stage-0"
+    ],
+    "plugins": [
+      "transform-object-assign"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.11.4",
+    "babel-eslint": "^6.1.2",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-register": "^6.11.6",
+    "eslint": "^2.10.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-react": "^5.1.1",
+    "react": "^15.0.0"
+  },
+  "peerDependencies": {
+    "react": "^15.0.0"
+  }
+}
