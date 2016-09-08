@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Snackbar from './Snackbar.js';
+import Snackbar from '../index.js';
 const target = document.getElementById('content');
 
 export default class Demo extends React.Component {
