@@ -5,10 +5,12 @@
 
 # WIP
 
+## [Demo]()
+
 ### Installation
 
 ```sh
-npm install react-snackbar
+npm install --save react-snackbar
 ```
 
 #### Usage
@@ -17,10 +19,10 @@ npm install react-snackbar
   import SnackBar from 'SnackBar';
 
   <SnackBar
-    actionText="" //Optional - Default `close`
-    actionHandler={this.handleSnackbar} //Function - Required
-    snackBarText="Application is offline!" //String - Required
-    showSnackBar=true //Boolean - Required
+    actionText=""                          //Default `close` - Optional
+    actionHandler={this.handleSnackbar}    //Function - Required
+    show=true                              //Boolean  - Required
+    snackBarText="Application is offline!" //String   - Required
   />
 ```
 

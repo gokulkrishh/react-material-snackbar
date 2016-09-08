@@ -1,15 +1,11 @@
 import { Component, PropTypes } from "react"
 
 export default class SnackBar extends Component {
-  static propTypes = {
+  static propTypes: {
     actionText: PropTypes.string,
     actionHandler: PropTypes.func.isRequired,
-    showSnackBar: PropTypes.bool.isRequired,
+    show: PropTypes.bool.isRequired,
     snackBarText: PropTypes.string.isRequired
-  }
-
-  static defaultProps = {
-    actionText: "close"
   }
 
   constructor(props) {
@@ -20,7 +16,7 @@ export default class SnackBar extends Component {
   }
 
   render() {
-    const {actionText, actionHandler, showSnackBar, snackBarText} = this.props;
+    const {actionText, actionHandler, show, snackBarText} = this.props;
 
     var snackbarStyle = {
       position: "fixed",
@@ -68,11 +64,14 @@ export default class SnackBar extends Component {
     };
 
     return (
-      <div className={showSnackBar ?  snackbarStyle + snackbarShowStyle : snackbarStyle}>
+      <div className={show ? snackbarStyle + snackbarShowStyle : snackbarStyle}>
         <p className={snackbarTextStyle}>{snackBarText}</p>
         <button className={snackbarActionStyle} onClick={actionHandler}>{actionText}</button>
       </div>
     );
   }
+};
 
-}
+SnackBar.defaultProps = {
+  actionText: "close"
+};
