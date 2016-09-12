@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/gokulkrishh/react-snackbar.svg?branch=master)](https://travis-ci.org/gokulkrishh/react-snackbar)  ![dependencies](https://david-dm.org/gokulkrishh/react-snackbar.svg)
-# react-material-snackbar
+# react-material-snackbar [![Build Status](https://travis-ci.org/gokulkrishh/react-material-snackbar.svg?branch=master)](https://travis-ci.org/gokulkrishh/react-material-snackbar)
 
 *A material design snackbar react component.*
 
