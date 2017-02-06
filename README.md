@@ -2,9 +2,10 @@
 
 *A material design snackbar react component.*
 
+
 > Created using [react-component-boilerplate](https://gokulkrishh.github.io/react-component-boilerplate/)
 
-## [Demo]()
+## [Demo](https://gokulkrishh.github.io/react-material-snackbar/demo/)
 
 ### Installation
 
