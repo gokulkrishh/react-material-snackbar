@@ -1,38 +1,35 @@
-import React, {PropTypes} from "react"
+import React, { Component } from 'react';
 
-export default class SnackBar extends React.Component {
-  static propTypes: {
-    actionText: PropTypes.string,
-    show: PropTypes.bool.isRequired,
-    snackBarText: PropTypes.string.isRequired
-  }
-
+export default class SnackBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showSnackBar: false
+      showSnackBar: this.props.show,
+      timer: 4000
     };
-
     this.hideSnackbar = this.hideSnackbar.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
-    const {showSnackBar} = this.state;
+    var {showSnackBar, timer} = this.state;
     if (showSnackBar !== nextProps.show) {
       this.setState({
-        showSnackBar: nextProps.show
+        showSnackBar: nextProps.show,
+        timer: nextProps.timer
       });
 
       setTimeout(() => {
-	 			this.hideSnackbar();
- 			}, 3000);
+        this.hideSnackbar();
+      }, timer);
     }
   }
 
   hideSnackbar() {
+    const {onCloseCallback} = this.props;
     this.setState({
       showSnackBar: false
     });
+    if (onCloseCallback) onCloseCallback();
   }
 
   render() {
@@ -58,8 +55,8 @@ export default class SnackBar extends React.Component {
       WebkitBoxPack: "justify",
       msFlexPack: "justify",
       justifyContent: "space-between",
-      WebkitTransition: "bottom 200ms cubic-bezier(0, 0, 0.30, 1)",
-      transition: "bottom 200ms cubic-bezier(0, 0, 0.30, 1)",
+      WebkitTransition: "bottom 0.3s cubic-bezier(0, 0, 0.30, 1)",
+      transition: "bottom 0.3s cubic-bezier(0, 0, 0.30, 1)",
       fontWeight: "500",
       textTransform: "initial",
       fontSize: "14px"
@@ -82,12 +79,7 @@ export default class SnackBar extends React.Component {
       outline: 0
     };
 
-    if (showSnackBar) {
-      snackbarStyle.bottom = 0;
-    }
-    else {
-      snackbarStyle.bottom = "-50px"
-    }
+    if (showSnackBar) snackbarStyle.bottom = 0;
 
     return(
       <div style={snackbarStyle}>
@@ -99,11 +91,14 @@ export default class SnackBar extends React.Component {
 };
 
 SnackBar.defaultProps = {
-  actionText: "close"
+  actionText: "close",
+  show: "false"
 };
 
 SnackBar.propTypes = {
-  actionText: PropTypes.string,
-  show: PropTypes.bool.isRequired,
-  snackBarText: PropTypes.string.isRequired
+  actionText: React.PropTypes.string,
+  show: React.PropTypes.bool.isRequired,
+  snackBarText: React.PropTypes.string.isRequired,
+  onCloseCallback: React.PropTypes.func,
+  timer: React.PropTypes.number
 };

@@ -2,7 +2,9 @@
 
 *A material design snackbar react component.*
 
-## [Demo](https://git.io/vi8fZ)
+> Created using [react-component-boilerplate](https://gokulkrishh.github.io/react-component-boilerplate/)
+
+## [Demo]()
 
 ### Installation
 
@@ -16,10 +18,14 @@ npm install --save react-material-snackbar
   import SnackBar from 'react-material-snackbar';
 
   <SnackBar
-    actionText="undo"                      //Default `close` - Optional
-    show={true}                            //Boolean  - Required
-    snackBarText="Application is offline!" //String   - Required
+    actionText="undo"                      //String 	- Optional and Default - `close`
+    onCloseCallback={() => {}}             //Function - Optional
+    show={true}                            //Boolean  - Required and Default - `false`
+    snackBarText="Application is offline"  //String   - Required
+    timer={} 															 //Number   - Optional and Default - `4000` (4 secs)
   />
 ```
 
-#### MIT License
+## License
+
+MIT © [Gokulakrishnan Kalaikovan](https://github.com/gokulkrishh)
