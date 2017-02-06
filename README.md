@@ -5,7 +5,7 @@
 
 > Created using [react-component-boilerplate](https://gokulkrishh.github.io/react-component-boilerplate/)
 
-## [Demo](https://gokulkrishh.github.io/react-material-snackbar/demo/)
+## [Demo](https://gokulkrishh.github.io/react-material-snackbar/)
 
 ### Installation
 
