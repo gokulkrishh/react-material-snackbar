@@ -23,7 +23,7 @@ npm install --save react-material-snackbar
     onCloseCallback={() => {}}             //Function - Optional
     show={true}                            //Boolean  - Required and Default - `false`
     snackBarText="Application is offline"  //String   - Required
-    timer={} 															 //Number   - Optional and Default - `4000` (4 secs)
+    timer={6000}                           //Number   - Optional and Default - `4000` (4 secs)
   />
 ```
 
