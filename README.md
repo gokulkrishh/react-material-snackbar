@@ -3,7 +3,7 @@
 *A material design snackbar react component.*
 
 
-> Created using [react-component-boilerplate](https://gokulkrishh.github.io/react-component-boilerplate/)
+> Created using [react-component-boilerplate](https://github.com/gokulkrishh/react-component-boilerplate/)
 
 ## [Demo](https://gokulkrishh.github.io/react-material-snackbar/)
 
