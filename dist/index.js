@@ -122,6 +122,7 @@ var SnackBar = function (_Component) {
       timer: 4000
     };
     _this.hideSnackbar = _this.hideSnackbar.bind(_this);
+    _this.timeout = null;
     return _this;
   }
 
@@ -140,8 +141,8 @@ var SnackBar = function (_Component) {
           timer: nextProps.timer
         });
 
-        setTimeout(function () {
-          _this2.hideSnackbar();
+        this.timeout = setTimeout(function () {
+          _this2.setState({ showSnackBar: false });
         }, timer);
       }
     }
@@ -153,6 +154,7 @@ var SnackBar = function (_Component) {
       this.setState({
         showSnackBar: false
       });
+      clearTimeout(this.timeout);
       if (onCloseCallback) onCloseCallback();
     }
   }, {

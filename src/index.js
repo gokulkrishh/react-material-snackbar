@@ -8,6 +8,7 @@ export default class SnackBar extends Component {
       timer: 4000
     };
     this.hideSnackbar = this.hideSnackbar.bind(this);
+    this.timeout = null;
   }
 
   componentWillReceiveProps(nextProps) {
@@ -18,8 +19,8 @@ export default class SnackBar extends Component {
         timer: nextProps.timer
       });
 
-      setTimeout(() => {
-        this.hideSnackbar();
+      this.timeout = setTimeout(() => {
+        this.setState({ showSnackBar:false });
       }, timer);
     }
   }
@@ -29,6 +30,7 @@ export default class SnackBar extends Component {
     this.setState({
       showSnackBar: false
     });
+    clearTimeout(this.timeout);
     if (onCloseCallback) onCloseCallback();
   }
 
