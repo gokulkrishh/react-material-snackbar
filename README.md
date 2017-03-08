@@ -1,6 +1,6 @@
 # react-material-snackbar [![Build Status](https://travis-ci.org/gokulkrishh/react-material-snackbar.svg?branch=master)](https://travis-ci.org/gokulkrishh/react-material-snackbar)
 
-*A material design snackbar react component.*
+*A material design snackbar react component (1.42KB gzip)*
 
 > Created using [react-component-boilerplate](https://github.com/gokulkrishh/react-component-boilerplate/)
 
