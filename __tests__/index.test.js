@@ -10,23 +10,15 @@ describe('SnackBar Component', () => {
     // Render the SnackBar component
     component = TestUtils.renderIntoDocument(
       <SnackBar 
-      	actionText="undo"
-        onCloseCallback={() => {}}
-		    show={true}
-		    snackBarText="Offline"
-        timer={10000}
-      />
+      	show={true}
+		    timer={10000}
+      >
+        <p>Loading...</p>
+      </SnackBar>
     );
 
     expect(component.state.showSnackBar).toEqual(true);
     const pTag = TestUtils.findRenderedDOMComponentWithTag(component, 'p');
-    expect(pTag.textContent).toEqual('Offline');
-  });
-
-
-  it('click action button to close it', () => { 
-    const snackbarActionButton = TestUtils.findRenderedDOMComponentWithTag(component, 'button');
-    TestUtils.Simulate.click(snackbarActionButton);
-    expect(component.state.showSnackBar).toEqual(false);
+    expect(pTag.textContent).toEqual('Loading...');
   });
 });

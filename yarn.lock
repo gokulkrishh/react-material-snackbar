@@ -2890,6 +2890,10 @@ react-dom@^15.4.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
+react-material-snackbar@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-material-snackbar/-/react-material-snackbar-2.0.2.tgz#793a16ac38513474e7f682d813f20fecf4602bc0"
+
 react@^15.4.2:
   version "15.4.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.4.2.tgz#41f7991b26185392ba9bae96c8889e7e018397ef"

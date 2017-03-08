@@ -10,7 +10,7 @@ class App extends Component {
     };
 
     this.showSnackBar = this.showSnackBar.bind(this);
-    this.onCloseCallback = this.onCloseCallback.bind(this);
+    this.close = this.close.bind(this);
   }
 
   showSnackBar() {
@@ -20,20 +20,20 @@ class App extends Component {
     });
   }
 
-  onCloseCallback() {
-    console.log("SnackBar is closed");
+  close() {
+    this.setState({
+      snackbar: false
+    });
   }
 
   render() {
     const {snackbar} = this.state;
     return(<div>
       <button className="showBtn" onClick={this.showSnackBar}>Show Snackbar</button>
-      <SnackBar 
-        onCloseCallback={this.onCloseCallback}
-        show={snackbar} 
-        snackBarText="Offline" 
-        timer={5000}
-      />
+      <SnackBar show={snackbar} timer={4000}>
+        <p>Loading...</p>
+        <span style={{"float": "right", marginLeft: "20px", cursor: "pointer", color: "red"}} onClick={this.close}>Close</span>
+      </SnackBar>
     </div>);
   }
 }

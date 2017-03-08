@@ -1,6 +1,6 @@
 {
   "name": "react-material-snackbar",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "A material design snackbar react component.",
   "main": "dist/index.js",
   "devDependencies": {
@@ -18,7 +18,7 @@
   "scripts": {
     "server": "./node_modules/.bin/webpack-dev-server --hot --inline",
     "watch": "./node_modules/.bin/webpack --watch --config=webpack.build.config.js",
-    "build": "./node_modules/.bin/webpack --config=webpack.build.config.js",
+    "build": "./node_modules/.bin/webpack --config=webpack.build.config.js -p",
     "pre-deploy": "./node_modules/.bin/webpack --config=webpack.config.js",
     "deploy": "npm run pre-deploy && git subtree push --prefix demo origin gh-pages",
     "start": "npm run build && npm run server",
